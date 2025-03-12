@@ -149,7 +149,7 @@ export function EventBookingForm() {
                     <FormControl>
                       <Button variant="outline">
                         {field.value
-                          ? format(field.value, "PPP")
+                          ? format(field.value, "MMMM d, yyyy")
                           : "Select date"}
                       </Button>
                     </FormControl>
