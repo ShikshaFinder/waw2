@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model EventBooking {
+  id                    String   @id @default(cuid())
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  // Basic Information
+  fullName             String
+  phoneNumber          String
+  alternatePhone       String?
+  email                String?
+  eventDate            DateTime
+  eventTime            DateTime
+  venueName            String
+  venueAddress         String
+
+  // Event Details
+  eventType            String
+  customEventType      String?
+  expectedGuests       String
+  exactGuestCount      Int?
+
+  // Selections
+  decorationStyles     DecorationStyle[]
+  foodPreferences      FoodPreference[]
+  cateringRequired     String
+  entertainmentChoices Entertainment[]
+  photographyPackage   String
+  seatingArrangement   String
+  customSeating        String?
+  additionalServices   AdditionalService[]
+
+  // Budget and Communication
+  budgetRange          String
+  customBudget         Float?
+  specialRequests      String?
+  preferredCommunication String
+
+  // Relations
+  customMenu          CustomMenu?
+  customTheme         CustomTheme?
+  customEntertainment CustomEntertainment?
+}
+
+model DecorationStyle {
+  id           String        @id @default(cuid())
+  name         String
+  customTheme  String?
+  events       EventBooking[]
+}
+
+model FoodPreference {
+  id           String        @id @default(cuid())
+  name         String
+  events       EventBooking[]
+}
+
+model CustomMenu {
+  id           String        @id @default(cuid())
+  details      String
+  eventId      String        @unique
+  event        EventBooking  @relation(fields: [eventId], references: [id])
+}
+
+model Entertainment {
+  id           String        @id @default(cuid())
+  name         String
+  events       EventBooking[]
+}
+
+model CustomEntertainment {
+  id           String        @id @default(cuid())
+  details      String
+  eventId      String        @unique
+  event        EventBooking  @relation(fields: [eventId], references: [id])
+}
+
+model CustomTheme {
+  id           String        @id @default(cuid())
+  details      String
+  eventId      String        @unique
+  event        EventBooking  @relation(fields: [eventId], references: [id])
+}
+
+model AdditionalService {
+  id           String        @id @default(cuid())
+  name         String
+  customDetail String?
+  events       EventBooking[]
+}
