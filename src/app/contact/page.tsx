@@ -33,7 +33,7 @@ export default function ContactPage() {
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-8">
             Have questions about our services or interested in joining our
-            network? We'd love to hear from you.
+            network? We&apos;d love to hear from you.
           </p>
         </div>
       </section>
