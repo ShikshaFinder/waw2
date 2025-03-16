@@ -143,15 +143,12 @@ export default function EventBookingForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="max-w-4xl mx-auto py-12 px-6"
-      >
+      <div className="max-w-4xl mx-auto py-12 px-6">
         <div className="space-y-10">
           <h2 className="text-3xl font-bold mb-8 text-center">
             મૂળભૂત માહિતી / Basic Information
           </h2>
-
+{/* bcb */}
           <div className="grid gap-8">
             {/* Basic Information Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -417,9 +414,14 @@ export default function EventBookingForm() {
           </div>
 
           <Button
-            onClick={(e) => {
-              e.preventDefault();
-              form.handleSubmit(onSubmit)(e);
+            onClick={async () => {
+              const isValid = await form.trigger();
+              if (!isValid) {
+                alert("Please fill all required fields correctly");
+                return;
+              }
+              const formData = form.getValues();
+              onSubmit(formData);
             }}
             className="w-full md:w-auto mt-10 p-6 text-lg"
             disabled={isSubmitting}
@@ -434,7 +436,7 @@ export default function EventBookingForm() {
             )}
           </Button>
         </div>
-      </form>
+      </div>
     </Form>
   );
 }

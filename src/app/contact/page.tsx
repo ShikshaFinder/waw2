@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 const contactMethods = [
   {
     title: "Email",
-    value: "contact@womenwork.com",
+    value: "contact@womenwork.in",
     icon: "📧",
   },
   {
