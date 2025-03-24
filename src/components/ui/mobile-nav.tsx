@@ -31,7 +31,7 @@ export function MobileNav({
         <div className="flex items-center justify-between">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-              WomenWork
+              WomenAtWork
             </span>
           </Link>
           <button

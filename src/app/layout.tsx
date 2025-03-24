@@ -6,7 +6,7 @@ import { Navbar } from "@/components/ui/navbar";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "WomenWork - Event Planning Platform",
+  title: "WomenAtWork - Event Planning Platform",
   description: "Empowering housewives to become professional event planners",
 };
 

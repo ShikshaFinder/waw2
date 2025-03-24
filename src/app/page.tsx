@@ -103,7 +103,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
-          <p>© 2024 WomenWork. All rights reserved.</p>
+          <p>© 2024 WomenAtWork. All rights reserved.</p>
         </div>
       </footer>
     </div>

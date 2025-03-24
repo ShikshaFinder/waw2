@@ -8,11 +8,11 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-800">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">
-            About WomenWork
+            About WomenAtWork
           </h1>
           <div className="max-w-3xl mx-auto">
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              WomenWork is a revolutionary platform that bridges the gap between
+              WomenAtWork is a revolutionary platform that bridges the gap between
               talented housewives and the event planning industry. We believe in
               empowering women by providing them with the tools, training, and
               opportunities to build successful careers while maintaining the
